@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("RustWorkshopUploader")]
 [assembly: AssemblyDescription("Custom rust workshop uploader")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Gattica")]
+[assembly: AssemblyCompany("Gattaca")]
 [assembly: AssemblyProduct("Custom workshop uploader")]
-[assembly: AssemblyCopyright("Gattica")]
+[assembly: AssemblyCopyright("Gattaca")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -30,5 +30,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values, or default the build and revision numbers
 // by using "*", as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.4.13.0")]
-[assembly: AssemblyFileVersion("1.4.13.0")]
+[assembly: AssemblyVersion("1.4.14.0")]
+[assembly: AssemblyFileVersion("1.4.14.0")]

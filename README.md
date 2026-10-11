@@ -1,6 +1,6 @@
 # Rust Workshop Uploader
 
-Windows program for publishing a Rust skin image to the Steam Workshop. Version 1.4.13. Re-coded October 2026 by Gattica.  ALL my code will be publish via a LLM for uploading.  Why upload when you have AI agents? My code was double checked through two different LLM for any mistakes.
+Windows program for publishing a Rust skin image to the Steam Workshop. Version 1.4.14. Re-coded October 2026 by Gattaca.  ALL my code will be publish via a LLM for uploading.  Why upload when you have AI agents? My code was double checked through two different LLM for any mistakes.
 
 Steam has to be installed. The program looks for the Steam client on every fixed drive, including installs that are not in `C:\Program Files (x86)\Steam`. If Steam is not already running, it starts `steam.exe` and waits for it. You need to be signed in to the Steam account the workshop item should belong to.
 
