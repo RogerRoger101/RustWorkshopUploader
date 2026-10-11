@@ -1,0 +1,19 @@
+LIBRARY steam_api64
+EXPORTS
+    SteamAPI_Init=steam_api_init.SteamAPI_Init
+    SteamAPI_RunCallbacks=steam_api64_real.SteamAPI_RunCallbacks
+    SteamAPI_RegisterCallback=steam_api64_real.SteamAPI_RegisterCallback
+    SteamAPI_UnregisterCallback=steam_api64_real.SteamAPI_UnregisterCallback
+    SteamAPI_RegisterCallResult=steam_api64_real.SteamAPI_RegisterCallResult
+    SteamAPI_UnregisterCallResult=steam_api64_real.SteamAPI_UnregisterCallResult
+    SteamAPI_Shutdown=steam_api64_real.SteamAPI_Shutdown
+    SteamAPI_GetHSteamUser=steam_api64_real.SteamAPI_GetHSteamUser
+    SteamAPI_GetHSteamPipe=steam_api64_real.SteamAPI_GetHSteamPipe
+    SteamAPI_RestartAppIfNecessary=steam_api64_real.SteamAPI_RestartAppIfNecessary
+    SteamGameServer_RunCallbacks=steam_api64_real.SteamGameServer_RunCallbacks
+    SteamGameServer_Shutdown=steam_api64_real.SteamGameServer_Shutdown
+    SteamGameServer_GetHSteamUser=steam_api64_real.SteamGameServer_GetHSteamUser
+    SteamGameServer_GetHSteamPipe=steam_api64_real.SteamGameServer_GetHSteamPipe
+    SteamInternal_FindOrCreateUserInterface=steam_api64_real.SteamInternal_FindOrCreateUserInterface
+    SteamInternal_FindOrCreateGameServerInterface=steam_api64_real.SteamInternal_FindOrCreateGameServerInterface
+    SteamInternal_CreateInterface=steam_api64_real.SteamInternal_CreateInterface

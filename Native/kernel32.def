@@ -1,0 +1,6 @@
+LIBRARY KERNEL32
+EXPORTS
+    GetModuleHandleW
+    GetModuleFileNameW
+    LoadLibraryW
+    GetProcAddress
