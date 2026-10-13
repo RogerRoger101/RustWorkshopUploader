@@ -4,7 +4,7 @@
 
 # Description
 Multiple languages added just click on your languages.  <br>
-Application will remember the language you picked so when you re-open the application, it will default to that launguage.<br>
+Application will remember the language you picked. <br>
 Windows program for publishing a Rust skin image to the Steam Workshop. <br>
 ALL my code will be publish via a LLM for uploading.  Why upload when you have AI agents? My code was double checked through two different LLM for any mistakes.
 <br><br>
