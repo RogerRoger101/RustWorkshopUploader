@@ -2,6 +2,8 @@
 
 <img width="527" height="506" alt="R_WIU_image1" src="https://github.com/user-attachments/assets/06040b35-dc87-4e0f-be58-20e12bba0388" />
 
+Windows program for publishing a Rust skin image to the Steam Workshop. Version 1.4.22. Re-coded October 2026 by Gattaca.
+
 # Description
 Multiple languages added just click on your languages.  <br>
 Application will remember the language you picked. <br>
@@ -33,7 +35,7 @@ Requires 64-bit Windows and .NET Framework 4.7.2.
 ## How to use
 
 1. Click **Browse** and choose a PNG image. The image must be 512 x 512.
-2. Enter a workshop name and a workshop description.
+2. Enter a Workshop Item name/title and a Workshop Item description.
 3. Click **Upload**. When the upload finishes, you can open the Steam Workshop page.
 4. To change an item you already uploaded, enter its Workshop ID. The button changes to **Update**. The ID is saved with the image, so choosing that image again fills it in.
 5. Click **N** to clear the Workshop ID and upload the image as a new item.
@@ -55,9 +57,17 @@ Replace a file, then start the program again. A rebuild is not required.
 
 ## Theme
 
-The sun and moon control at the right of the menu bar sets the theme. The sun selects light mode. The moon selects dark mode. Clicking the side that is already active does nothing.
+The sun and moon switch at the right of the menu bar uses the same pill style as the language switches. Click the pill to switch between light and dark. The sun or moon inside the pill shows the current mode.
 
 The choice is saved in `%APPDATA%\RustWorkshopUploader\nightmode.txt`.
+
+## Language
+
+The three language switches sit above the progress bar at the bottom of the window: English or Spanish, Russian or Ukrainian, and German or French. Click a language code, or the side of a switch, to choose that language. The menus, labels, buttons, the How to use window, and the message boxes change at once.
+
+The choice is saved in `%APPDATA%\RustWorkshopUploader\language.txt`.
+
+The window position is saved when you quit and restored the next time you open the program (`%APPDATA%\RustWorkshopUploader\position.txt`).
 
 ## Build
 

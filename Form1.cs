@@ -14,6 +14,9 @@ namespace RustWorkshopUploader
     {
         private CustomSkin _editing;
         private string _folderPath;
+        private readonly ToolStripControlHost _themeHost;
+        private readonly LanguageBar _languageBar;
+        private int _browseLeft = -1;
 
         public FrmMain()
         {
@@ -23,8 +26,10 @@ namespace RustWorkshopUploader
             Directory.CreateDirectory(Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "CustomSkins");
             LoadImagesFromExeFolder();
             InstallCaption();
+            GrowMenuRow(32);
 
             var themeToggle = new ThemeToggle { Night = NightTheme.Load() };
+            _languageBar = new LanguageBar { Selected = Language.Current, Night = themeToggle.Night };
             themeToggle.NightChanged += (s, args) =>
             {
                 NightTheme.SetEnabled(themeToggle.Night);
@@ -33,19 +38,102 @@ namespace RustWorkshopUploader
                 FitBrowseButton();
                 themeToggle.BackColor = menuStrip1.BackColor;
                 themeToggle.Invalidate();
+                _languageBar.Night = themeToggle.Night;
+                SyncLanguageBarChrome();
             };
-            menuStrip1.Items.Add(new ToolStripControlHost(themeToggle)
+            _languageBar.LanguageChanged += (s, args) =>
+            {
+                var buttonState = ButtonState();
+                Language.Set(_languageBar.Selected);
+                ApplyLanguage(buttonState);
+            };
+            _themeHost = new ToolStripControlHost(themeToggle)
             {
                 Alignment = ToolStripItemAlignment.Right,
                 AutoSize = false,
-                Size = new Size(88, 26),
-                Margin = new Padding(0, 0, 6, 0),
-                ToolTipText = "Switch between light and dark"
-            });
+                Size = themeToggle.Size,
+                Margin = new Padding(0, 0, 6, 0)
+            };
+            menuStrip1.Items.Add(_themeHost);
+            Controls.Add(_languageBar);
+            LayoutLanguageBar();
             NightTheme.Apply(this);
             themeToggle.BackColor = menuStrip1.BackColor;
+            SyncLanguageBarChrome();
             ApplyWorkshopIdStyle();
             HoldInputs(false);
+            ApplyLanguage(ButtonState());
+            WindowPosition.Load(this);
+            FormClosing += (s, args) =>
+            {
+                WindowPosition.Save(this);
+                Language.Set(_languageBar.Selected);
+            };
+        }
+
+        private void LayoutLanguageBar()
+        {
+            const int gap = 4;
+            var strip = _languageBar.Height + gap;
+            var reclaim = ProgressBar.Top - label6.Top;
+            label6.Visible = false;
+            ProgressBar.Top = label6.Top + strip;
+            ClientSize = new Size(ClientSize.Width, ClientSize.Height - reclaim + strip);
+
+            _languageBar.Left = ProgressBar.Left + Math.Max(0, (ProgressBar.Width - _languageBar.Width) / 2);
+            _languageBar.Top = ProgressBar.Top - strip;
+            _languageBar.BringToFront();
+            ProgressBar.Visible = true;
+        }
+
+        private void SyncLanguageBarChrome()
+        {
+            _languageBar.BackColor = BackColor;
+            _languageBar.Invalidate();
+        }
+
+        private void GrowMenuRow(int height)
+        {
+            var delta = height - menuStrip1.Height;
+            menuStrip1.AutoSize = false;
+            menuStrip1.Height = height;
+            if (delta <= 0)
+                return;
+
+            foreach (Control control in Controls)
+            {
+                if (control == menuStrip1 || control.Dock != DockStyle.None)
+                    continue;
+                control.Top += delta;
+            }
+            ClientSize = new Size(ClientSize.Width, ClientSize.Height + delta);
+        }
+
+        private int ButtonState()
+        {
+            if (btnDo.Text == strings.BtnDo_Uploading)
+                return 2;
+            return btnDo.Text == strings.BtnDo_Update ? 1 : 0;
+        }
+
+        private void ApplyLanguage(int buttonState)
+        {
+            fileToolStripMenuItem.Text = strings.Menu_File;
+            browseToolStripMenuItem.Text = strings.Menu_Browse;
+            newUploadToolStripMenuItem.Text = strings.Menu_NewId;
+            quitToolStripMenuItem.Text = strings.Menu_Quit;
+            infoToolStripMenuItem.Text = strings.Menu_Info;
+            label1.Text = strings.Label_File;
+            label2.Text = strings.Label_WorkshopId;
+            label3.Text = strings.Label_WorkshopName;
+            label4.Text = strings.Label_WorkshopDescription;
+            btnSelectFolder.Text = strings.Button_Browse;
+            Text = "Gattaca | " + strings.Title;
+            _themeHost.ToolTipText = strings.Theme_Tooltip;
+            btnDo.Text = buttonState == 2 ? strings.BtnDo_Uploading
+                : buttonState == 1 ? strings.BtnDo_Update
+                : strings.BtnDo_Upload;
+
             FitBrowseButton();
         }
 
@@ -66,19 +154,18 @@ namespace RustWorkshopUploader
 
         private void FitBrowseButton()
         {
+            if (_browseLeft < 0)
+                _browseLeft = btnSelectFolder.Left;
+
             var measured = TextRenderer.MeasureText(btnSelectFolder.Text, btnSelectFolder.Font);
             var height = measured.Height + 16;
             var width = measured.Width + height + 8;
             btnSelectFolder.Size = new Size(width, height);
             btnSelectFolder.Top = txtFolder.Top + (txtFolder.Height - height) / 2;
+            btnSelectFolder.Left = Math.Min(_browseLeft, ClientSize.Width - 8 - width);
 
-            var limit = ClientSize.Width - 8;
-            if (btnSelectFolder.Right > limit)
-                btnSelectFolder.Left -= btnSelectFolder.Right - limit;
-
-            var folderRight = btnSelectFolder.Left - 6;
-            if (txtFolder.Right > folderRight)
-                txtFolder.Width = Math.Max(40, folderRight - txtFolder.Left);
+            txtFolder.Left = label1.Right + 6;
+            txtFolder.Width = Math.Max(40, btnSelectFolder.Left - 6 - txtFolder.Left);
         }
 
         private void LoadImagesFromExeFolder()
@@ -120,13 +207,21 @@ namespace RustWorkshopUploader
         {
             using (var help = new Form())
             {
-                help.Text = "How to use";
+                help.Text = strings.Help_Title;
                 help.FormBorderStyle = FormBorderStyle.None;
                 help.StartPosition = FormStartPosition.CenterParent;
                 help.MinimizeBox = false;
                 help.MaximizeBox = false;
                 help.ShowInTaskbar = false;
-                help.ClientSize = new Size(480, 412);
+
+                const int helpWidth = 480;
+                var helpText = strings.Help_Text.Replace("\r\n", "\n").Replace("\n", Environment.NewLine);
+                var helpFont = new Font("Segoe UI", 9f);
+                var measured = TextRenderer.MeasureText(helpText, helpFont, new Size(helpWidth - 16, int.MaxValue),
+                    TextFormatFlags.WordBreak | TextFormatFlags.TextBoxControl);
+                var helpHeight = 32 + measured.Height + 24 + 32;
+                var maxHeight = Screen.FromControl(this).WorkingArea.Height - 40;
+                help.ClientSize = new Size(helpWidth, Math.Min(helpHeight, maxHeight));
 
                 var instructions = new TextBox
                 {
@@ -134,25 +229,16 @@ namespace RustWorkshopUploader
                     ReadOnly = true,
                     BorderStyle = BorderStyle.None,
                     Dock = DockStyle.Fill,
-                    ScrollBars = ScrollBars.None,
+                    ScrollBars = helpHeight > maxHeight ? ScrollBars.Vertical : ScrollBars.None,
                     HideSelection = true,
                     TabStop = false,
-                    Font = new Font("Segoe UI", 9f),
-                    Text =
-                        "Steam has to be running before you open this program. It searches every fixed drive for the Steam client." + Environment.NewLine + Environment.NewLine +
-                        "1. Click Browse and choose a PNG image. The image must be 512 x 512." + Environment.NewLine + Environment.NewLine +
-                        "2. Enter a workshop name and a workshop description." + Environment.NewLine + Environment.NewLine +
-                        "3. Click Upload. When the upload finishes, you can open the Steam Workshop page." + Environment.NewLine + Environment.NewLine +
-                        "4. To change an item you already uploaded, enter its Workshop ID. The button changes to Update. The ID is saved with the image, so choosing that image again fills it in." + Environment.NewLine + Environment.NewLine +
-                        "5. Click N to clear the Workshop ID and upload the image as a new item." + Environment.NewLine + Environment.NewLine +
-                        "6. Double-click the Workshop ID to open that item on Steam." + Environment.NewLine + Environment.NewLine +
-                        "The banner at the top is Images\\logo.png in the same folder as this program. Replace that file, then start the program again. The window icon is Images\\favicon.ico." + Environment.NewLine + Environment.NewLine +
-                        "The sun and moon button at the right of the menu bar switches the theme. The sun is light and the moon is dark."
+                    Font = helpFont,
+                    Text = helpText
                 };
 
                 var ok = new Button
                 {
-                    Text = "OK",
+                    Text = strings.Help_OK,
                     DialogResult = DialogResult.OK,
                     Dock = DockStyle.Bottom,
                     Height = 32
@@ -183,6 +269,8 @@ namespace RustWorkshopUploader
             btnDo.Enabled = editing;
             button1.Enabled = editing;
             HoldInputs(editing);
+            if (editing)
+                ProgressBar.Value = 0;
         }
 
         private void HoldInputs(bool editing)

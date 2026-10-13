@@ -28,6 +28,7 @@ namespace RustWorkshopUploader
             CultureInfo.DefaultThreadCurrentUICulture = culture;
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
+            Language.Load();
 
             var steamPath = SteamInstall.Find();
             if (steamPath == null)

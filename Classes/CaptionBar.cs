@@ -58,6 +58,7 @@ namespace RustWorkshopUploader.Classes
             if (_icon != null)
                 WireDrag(_icon);
             WireDrag(_title);
+            form.TextChanged += (sender, args) => _title.Text = _form.Text;
         }
 
         public void ApplyTheme(bool dark)

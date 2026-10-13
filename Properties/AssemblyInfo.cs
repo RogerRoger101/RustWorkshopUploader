@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General information about this assembly is provided by the following attributes.
@@ -30,5 +30,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values, or default the build and revision numbers
 // by using "*", as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.4.14.0")]
-[assembly: AssemblyFileVersion("1.4.14.0")]
+[assembly: AssemblyVersion("1.4.22.0")]
+[assembly: AssemblyFileVersion("1.4.22.0")]

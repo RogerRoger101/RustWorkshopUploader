@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Publish_OpenBrowser" xml:space="preserve">
+    <value>Загрузка завершена!
+Открыть страницу в Мастерской?</value>
+  </data>
+  <data name="SteamNotFound" xml:space="preserve">
+    <value>Steam не запущен!</value>
+  </data>
+  <data name="SteamInstallNotFound" xml:space="preserve">
+    <value>Установка Steam не найдена.</value>
+  </data>
+  <data name="Message_Error" xml:space="preserve">
+    <value>ОШИБКА</value>
+  </data>
+  <data name="AppError" xml:space="preserve">
+    <value>Ошибка приложения: {0}</value>
+  </data>
+  <data name="CustomSkin_DeserializationFailed" xml:space="preserve">
+    <value>Не удалось прочитать файл {0} как CustomSkin!
+{1}</value>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>Ошибка: {0}</value>
+  </data>
+  <data name="Publish_RetreiveFailed" xml:space="preserve">
+    <value>Не удалось получить информацию из Steam</value>
+  </data>
+  <data name="Message_Success" xml:space="preserve">
+    <value>ГОТОВО</value>
+  </data>
+  <data name="BtnDo_Upload" xml:space="preserve">
+    <value>ЗАГРУЗИТЬ</value>
+  </data>
+  <data name="BtnDo_Update" xml:space="preserve">
+    <value>ОБНОВИТЬ</value>
+  </data>
+  <data name="BtnDo_Uploading" xml:space="preserve">
+    <value>ЗАГРУЗКА...</value>
+  </data>
+  <data name="Select_UnableToOpen" xml:space="preserve">
+    <value>Не удалось открыть выбранный файл</value>
+  </data>
+  <data name="Select_WrongResolution" xml:space="preserve">
+    <value>Разрешение изображения должно быть 512x512!</value>
+  </data>
+  <data name="Do_NoImage" xml:space="preserve">
+    <value>Выберите файл изображения!</value>
+  </data>
+  <data name="Do_NoName" xml:space="preserve">
+    <value>Укажите название предмета!</value>
+  </data>
+  <data name="Do_NoDescription" xml:space="preserve">
+    <value>Укажите описание!</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="Menu_Browse" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="Menu_NewId" xml:space="preserve">
+    <value>Новый ID</value>
+  </data>
+  <data name="Menu_Quit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="Menu_Info" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="Label_File" xml:space="preserve">
+    <value>Файл:</value>
+  </data>
+  <data name="Label_WorkshopId" xml:space="preserve">
+    <value>ID в Мастерской:</value>
+  </data>
+  <data name="Label_WorkshopName" xml:space="preserve">
+    <value>Название/заголовок предмета в Мастерской:</value>
+  </data>
+  <data name="Label_WorkshopDescription" xml:space="preserve">
+    <value>Описание предмета в Мастерской:</value>
+  </data>
+  <data name="Button_Browse" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="Footer" xml:space="preserve">
+    <value>переписано: октябрь 2026</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Загрузчик в Мастерскую Rust</value>
+  </data>
+  <data name="Theme_Tooltip" xml:space="preserve">
+    <value>Переключить светлую и тёмную тему</value>
+  </data>
+  <data name="Help_Title" xml:space="preserve">
+    <value>Как пользоваться</value>
+  </data>
+  <data name="Help_OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="Help_Text" xml:space="preserve">
+    <value>Перед запуском этой программы должен быть запущен Steam. Программа ищет клиент Steam на всех локальных дисках.
+
+1. Нажмите «Обзор» и выберите изображение PNG. Размер изображения должен быть 512 x 512.
+
+2. Введите название/заголовок предмета и описание для Мастерской.
+
+3. Нажмите «Загрузить». После завершения загрузки можно открыть страницу в Мастерской Steam.
+
+4. Чтобы изменить уже загруженный предмет, введите его ID в Мастерской. Кнопка сменится на «Обновить». ID сохраняется вместе с изображением, поэтому при повторном выборе этого изображения он подставится сам.
+
+5. Нажмите N, чтобы очистить ID в Мастерской и загрузить изображение как новый предмет.
+
+6. Дважды щёлкните по ID в Мастерской, чтобы открыть этот предмет в Steam.
+
+Баннер сверху — это файл Images\logo.png в папке программы. Замените этот файл и перезапустите программу. Значок окна — Images\favicon.ico.
+
+Кнопка с солнцем и луной справа в строке меню переключает тему. Солнце — светлая тема, луна — тёмная.
+
+Нажмите код языка в строке меню, чтобы сменить язык.</value>
+  </data>
+</root>

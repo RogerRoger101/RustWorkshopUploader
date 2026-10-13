@@ -39,7 +39,7 @@ namespace RustWorkshopUploader.Localization {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RustWorkshopUploader.Localization.strings", typeof(strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::RustWorkshopUploader.Classes.LanguageResourceManager();
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -230,6 +230,102 @@ namespace RustWorkshopUploader.Localization {
         internal static string SteamInstallNotFound {
             get {
                 return ResourceManager.GetString("SteamInstallNotFound", resourceCulture);
+            }
+        }
+        
+        internal static string Menu_File {
+            get {
+                return ResourceManager.GetString("Menu_File", resourceCulture);
+            }
+        }
+        
+        internal static string Menu_Browse {
+            get {
+                return ResourceManager.GetString("Menu_Browse", resourceCulture);
+            }
+        }
+        
+        internal static string Menu_NewId {
+            get {
+                return ResourceManager.GetString("Menu_NewId", resourceCulture);
+            }
+        }
+        
+        internal static string Menu_Quit {
+            get {
+                return ResourceManager.GetString("Menu_Quit", resourceCulture);
+            }
+        }
+        
+        internal static string Menu_Info {
+            get {
+                return ResourceManager.GetString("Menu_Info", resourceCulture);
+            }
+        }
+        
+        internal static string Label_File {
+            get {
+                return ResourceManager.GetString("Label_File", resourceCulture);
+            }
+        }
+        
+        internal static string Label_WorkshopId {
+            get {
+                return ResourceManager.GetString("Label_WorkshopId", resourceCulture);
+            }
+        }
+        
+        internal static string Label_WorkshopName {
+            get {
+                return ResourceManager.GetString("Label_WorkshopName", resourceCulture);
+            }
+        }
+        
+        internal static string Label_WorkshopDescription {
+            get {
+                return ResourceManager.GetString("Label_WorkshopDescription", resourceCulture);
+            }
+        }
+        
+        internal static string Button_Browse {
+            get {
+                return ResourceManager.GetString("Button_Browse", resourceCulture);
+            }
+        }
+        
+        internal static string Footer {
+            get {
+                return ResourceManager.GetString("Footer", resourceCulture);
+            }
+        }
+        
+        internal static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        internal static string Theme_Tooltip {
+            get {
+                return ResourceManager.GetString("Theme_Tooltip", resourceCulture);
+            }
+        }
+        
+        internal static string Help_Title {
+            get {
+                return ResourceManager.GetString("Help_Title", resourceCulture);
+            }
+        }
+        
+        internal static string Help_OK {
+            get {
+                return ResourceManager.GetString("Help_OK", resourceCulture);
+            }
+        }
+        
+        internal static string Help_Text {
+            get {
+                return ResourceManager.GetString("Help_Text", resourceCulture);
             }
         }
     }

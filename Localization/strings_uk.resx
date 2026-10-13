@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Publish_OpenBrowser" xml:space="preserve">
+    <value>Завантаження завершено!
+Відкрити сторінку в Майстерні?</value>
+  </data>
+  <data name="SteamNotFound" xml:space="preserve">
+    <value>Steam не запущено!</value>
+  </data>
+  <data name="SteamInstallNotFound" xml:space="preserve">
+    <value>Встановлення Steam не знайдено.</value>
+  </data>
+  <data name="Message_Error" xml:space="preserve">
+    <value>ПОМИЛКА</value>
+  </data>
+  <data name="AppError" xml:space="preserve">
+    <value>Помилка програми: {0}</value>
+  </data>
+  <data name="CustomSkin_DeserializationFailed" xml:space="preserve">
+    <value>Не вдалося прочитати файл {0} як CustomSkin!
+{1}</value>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>Помилка: {0}</value>
+  </data>
+  <data name="Publish_RetreiveFailed" xml:space="preserve">
+    <value>Не вдалося отримати інформацію зі Steam</value>
+  </data>
+  <data name="Message_Success" xml:space="preserve">
+    <value>ГОТОВО</value>
+  </data>
+  <data name="BtnDo_Upload" xml:space="preserve">
+    <value>ЗАВАНТАЖИТИ</value>
+  </data>
+  <data name="BtnDo_Update" xml:space="preserve">
+    <value>ОНОВИТИ</value>
+  </data>
+  <data name="BtnDo_Uploading" xml:space="preserve">
+    <value>ЗАВАНТАЖЕННЯ...</value>
+  </data>
+  <data name="Select_UnableToOpen" xml:space="preserve">
+    <value>Не вдалося відкрити вибраний файл</value>
+  </data>
+  <data name="Select_WrongResolution" xml:space="preserve">
+    <value>Роздільність зображення має бути 512x512!</value>
+  </data>
+  <data name="Do_NoImage" xml:space="preserve">
+    <value>Виберіть файл зображення!</value>
+  </data>
+  <data name="Do_NoName" xml:space="preserve">
+    <value>Вкажіть назву предмета!</value>
+  </data>
+  <data name="Do_NoDescription" xml:space="preserve">
+    <value>Вкажіть опис!</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="Menu_Browse" xml:space="preserve">
+    <value>Огляд</value>
+  </data>
+  <data name="Menu_NewId" xml:space="preserve">
+    <value>Новий ID</value>
+  </data>
+  <data name="Menu_Quit" xml:space="preserve">
+    <value>Вихід</value>
+  </data>
+  <data name="Menu_Info" xml:space="preserve">
+    <value>Довідка</value>
+  </data>
+  <data name="Label_File" xml:space="preserve">
+    <value>Файл:</value>
+  </data>
+  <data name="Label_WorkshopId" xml:space="preserve">
+    <value>ID у Майстерні:</value>
+  </data>
+  <data name="Label_WorkshopName" xml:space="preserve">
+    <value>Назва/заголовок предмета в Майстерні:</value>
+  </data>
+  <data name="Label_WorkshopDescription" xml:space="preserve">
+    <value>Опис предмета в Майстерні:</value>
+  </data>
+  <data name="Button_Browse" xml:space="preserve">
+    <value>Огляд</value>
+  </data>
+  <data name="Footer" xml:space="preserve">
+    <value>перекодовано: жовтень 2026</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Завантажувач до Майстерні Rust</value>
+  </data>
+  <data name="Theme_Tooltip" xml:space="preserve">
+    <value>Перемкнути світлу й темну тему</value>
+  </data>
+  <data name="Help_Title" xml:space="preserve">
+    <value>Як користуватися</value>
+  </data>
+  <data name="Help_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Help_Text" xml:space="preserve">
+    <value>Перед запуском цієї програми має бути запущено Steam. Програма шукає клієнт Steam на всіх локальних дисках.
+
+1. Натисніть «Огляд» і виберіть зображення PNG. Розмір зображення має бути 512 x 512.
+
+2. Введіть назву/заголовок предмета й опис для Майстерні.
+
+3. Натисніть «Завантажити». Після завершення завантаження можна відкрити сторінку в Майстерні Steam.
+
+4. Щоб змінити вже завантажений предмет, введіть його ID у Майстерні. Кнопка зміниться на «Оновити». ID зберігається разом із зображенням, тож коли ви знову виберете це зображення, його буде підставлено автоматично.
+
+5. Натисніть N, щоб очистити ID у Майстерні та завантажити зображення як новий предмет.
+
+6. Двічі клацніть ID у Майстерні, щоб відкрити цей предмет у Steam.
+
+Банер угорі — це файл Images\logo.png у папці програми. Замініть цей файл і перезапустіть програму. Значок вікна — Images\favicon.ico.
+
+Кнопка із сонцем і місяцем праворуч у рядку меню перемикає тему. Сонце — світла тема, місяць — темна.
+
+Натисніть код мови в рядку меню, щоб змінити мову.</value>
+  </data>
+</root>

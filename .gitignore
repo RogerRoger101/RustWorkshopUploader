@@ -331,3 +331,8 @@ ASALocalRun/
 
 # Dependencies (As they are belong to the right owners)
 Dependencies/
+
+# Local version backups (keep on disk, not on GitHub)
+history/
+*.psd
+

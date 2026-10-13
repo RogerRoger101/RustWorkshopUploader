@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Publish_OpenBrowser" xml:space="preserve">
+    <value>Hochladen abgeschlossen!
+Workshop-Seite öffnen?</value>
+  </data>
+  <data name="SteamNotFound" xml:space="preserve">
+    <value>Steam läuft nicht!</value>
+  </data>
+  <data name="SteamInstallNotFound" xml:space="preserve">
+    <value>Es wurde keine Steam-Installation gefunden.</value>
+  </data>
+  <data name="Message_Error" xml:space="preserve">
+    <value>FEHLER</value>
+  </data>
+  <data name="AppError" xml:space="preserve">
+    <value>Anwendungsfehler: {0}</value>
+  </data>
+  <data name="CustomSkin_DeserializationFailed" xml:space="preserve">
+    <value>Die Datei {0} konnte nicht als CustomSkin gelesen werden!
+{1}</value>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>Fehler: {0}</value>
+  </data>
+  <data name="Publish_RetreiveFailed" xml:space="preserve">
+    <value>Informationen konnten nicht von Steam abgerufen werden</value>
+  </data>
+  <data name="Message_Success" xml:space="preserve">
+    <value>ERFOLG</value>
+  </data>
+  <data name="BtnDo_Upload" xml:space="preserve">
+    <value>HOCHLADEN</value>
+  </data>
+  <data name="BtnDo_Update" xml:space="preserve">
+    <value>AKTUALISIEREN</value>
+  </data>
+  <data name="BtnDo_Uploading" xml:space="preserve">
+    <value>WIRD HOCHGELADEN...</value>
+  </data>
+  <data name="Select_UnableToOpen" xml:space="preserve">
+    <value>Die ausgewählte Datei kann nicht geöffnet werden</value>
+  </data>
+  <data name="Select_WrongResolution" xml:space="preserve">
+    <value>Die Bildauflösung muss 512x512 betragen!</value>
+  </data>
+  <data name="Do_NoImage" xml:space="preserve">
+    <value>Bitte wählen Sie eine Bilddatei!</value>
+  </data>
+  <data name="Do_NoName" xml:space="preserve">
+    <value>Bitte geben Sie einen Namen ein!</value>
+  </data>
+  <data name="Do_NoDescription" xml:space="preserve">
+    <value>Bitte geben Sie eine Beschreibung ein!</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="Menu_Browse" xml:space="preserve">
+    <value>Durchsuchen</value>
+  </data>
+  <data name="Menu_NewId" xml:space="preserve">
+    <value>Neue ID</value>
+  </data>
+  <data name="Menu_Quit" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="Menu_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Label_File" xml:space="preserve">
+    <value>Datei:</value>
+  </data>
+  <data name="Label_WorkshopId" xml:space="preserve">
+    <value>Workshop-ID:</value>
+  </data>
+  <data name="Label_WorkshopName" xml:space="preserve">
+    <value>Workshop-Item-Name/Titel:</value>
+  </data>
+  <data name="Label_WorkshopDescription" xml:space="preserve">
+    <value>Workshop-Item-Beschreibung:</value>
+  </data>
+  <data name="Button_Browse" xml:space="preserve">
+    <value>Durchsuchen</value>
+  </data>
+  <data name="Footer" xml:space="preserve">
+    <value>neu programmiert: Oktober 2026</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Eigener Rust-Workshop-Uploader</value>
+  </data>
+  <data name="Theme_Tooltip" xml:space="preserve">
+    <value>Zwischen hell und dunkel wechseln</value>
+  </data>
+  <data name="Help_Title" xml:space="preserve">
+    <value>Anleitung</value>
+  </data>
+  <data name="Help_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Help_Text" xml:space="preserve">
+    <value>Steam muss laufen, bevor Sie dieses Programm öffnen. Das Programm sucht auf allen festen Laufwerken nach dem Steam-Client.
+
+1. Klicken Sie auf Durchsuchen und wählen Sie ein PNG-Bild. Das Bild muss 512 x 512 groß sein.
+
+2. Geben Sie einen Workshop-Item-Namen/Titel und eine Workshop-Item-Beschreibung ein.
+
+3. Klicken Sie auf Hochladen. Wenn das Hochladen fertig ist, können Sie die Steam-Workshop-Seite öffnen.
+
+4. Um ein bereits hochgeladenes Element zu ändern, geben Sie seine Workshop-ID ein. Die Schaltfläche wechselt zu Aktualisieren. Die ID wird mit dem Bild gespeichert, daher wird sie beim erneuten Auswählen dieses Bildes eingetragen.
+
+5. Klicken Sie auf N, um die Workshop-ID zu löschen und das Bild als neues Element hochzuladen.
+
+6. Doppelklicken Sie auf die Workshop-ID, um das Element auf Steam zu öffnen.
+
+Das Banner oben ist Images\logo.png im selben Ordner wie dieses Programm. Ersetzen Sie diese Datei und starten Sie das Programm neu. Das Fenstersymbol ist Images\favicon.ico.
+
+Die Sonne-und-Mond-Schaltfläche rechts in der Menüleiste wechselt das Design. Die Sonne ist hell, der Mond ist dunkel.
+
+Klicken Sie in der Menüleiste auf einen Sprachcode, um die Sprache zu ändern.</value>
+  </data>
+</root>
