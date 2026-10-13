@@ -6,7 +6,8 @@
 Multiple languages added just click on your languages.  <br>
 Application will remember the language you picked. <br>
 Windows program for publishing a Rust skin image to the Steam Workshop. <br>
-ALL my code will be publish via a LLM for uploading.  Why upload when you have AI agents? My code was double checked through two different LLM for any mistakes.
+ALL my code will be publish via a LLM for uploading.  Why upload when you have AI agents? <br>
+My code was double checked through two different LLM for any mistakes.
 <br><br>
 Steam has to be installed. The program looks for the Steam client on every fixed drive, including installs that are not in `C:\Program Files (x86)\Steam`. <br>
 If Steam is not already running, it starts `steam.exe` and waits for it. You need to be signed in to the Steam account the workshop item should belong to.
